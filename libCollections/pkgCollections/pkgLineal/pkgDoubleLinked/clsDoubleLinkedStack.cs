@@ -6,6 +6,12 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
 {
     public class clsDoubleLinkedStack<T> : clsADTDoubleLinked<T>, iStack<T> where T : IComparable<T>
     {
+        #region Constructors
+        public clsDoubleLinkedStack()
+        {
+
+        }
+        #endregion
         #region CRUDs
         public bool opPeek(ref T prmItem)
         {
