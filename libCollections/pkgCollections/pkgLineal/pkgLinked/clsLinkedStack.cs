@@ -17,7 +17,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
             if (attLength == 0)
             {
                 prmItem = default;
-                return false;
+                return false; 
             }
             else
             {
