@@ -35,14 +35,12 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
             else
             {
                 prmItem = opGetLast().opGetItem(); 
-                opGoLast(); 
-                //opRemove(); 
+                opGoLast(); //
                 return true;
             }
         }
         public bool opPush(T prmItem)
         {
-            //opInsert(prmItem);
             throw new NotImplementedException();
         }
     }
