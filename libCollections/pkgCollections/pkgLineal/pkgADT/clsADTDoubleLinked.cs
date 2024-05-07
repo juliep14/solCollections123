@@ -35,6 +35,15 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         {
             throw new NotImplementedException();
         }
+        public clsDoubleLinkedNode<T> opGetFirstQuarter()
+        {
+            throw new NotImplementedException();
+        }
+        public clsDoubleLinkedNode<T> opGetLastQuarter()
+        {
+            throw new NotImplementedException();
+        }
+      
         #endregion
         #region Setters
         public bool opSetFirst(clsDoubleLinkedNode<T> prmNode)

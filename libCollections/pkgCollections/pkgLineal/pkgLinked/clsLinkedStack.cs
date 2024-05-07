@@ -35,7 +35,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
             else
             {
                 prmItem = opGetLast().opGetItem(); 
-                opGoLast(); //
+                opGoLast(); 
                 return true;
             }
         }

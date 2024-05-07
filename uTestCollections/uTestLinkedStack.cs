@@ -73,8 +73,8 @@ namespace uTestCollections
             Assert.AreEqual(3, testMyStack.opGetLast().opGetItem());
             #endregion
         }
-        //[TestMethod]
-        /*public void testPushNextItemWithHugeCollection()
+        /*[TestMethod]
+        public void testPushNextItemWithHugeCollection()
         {
             #region Setup
             testMyStack = new clsLinkedStack<int>();
