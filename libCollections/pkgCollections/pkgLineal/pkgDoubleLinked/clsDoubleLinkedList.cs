@@ -6,6 +6,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
 {
     public class clsDoubleLinkedList<T> : clsADTDoubleLinked<T>, iList<T> where T : IComparable<T>
     {
+        public clsDoubleLinkedList()
+        {
+
+        }
         public bool opAdd(T prmItem)
         {
             throw new NotImplementedException();

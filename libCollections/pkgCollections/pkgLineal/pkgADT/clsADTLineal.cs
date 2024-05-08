@@ -139,7 +139,12 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         }
         public virtual bool opToItems(T[] prmArray)
         {
-            throw new NotImplementedException();
+            if (prmArray == null || prmArray.Length == 0) return false;
+            if (prmArray.Length > attMaxCapacity) return false;
+            attItsOrderedAscending = opItsOrderedAscending();
+            attItsOrderedDescending = opItsOrderedDescending();
+            return true;
+
         }
         public virtual bool opToItems(T[] prmArray, int prmItemsCount)
         {

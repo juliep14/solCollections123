@@ -6,6 +6,12 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
 {
     public class clsDoubleLinkedQueue<T> : clsADTDoubleLinked<T>, iQueue<T> where T : IComparable<T>
     {
+        #region constructor
+        public clsDoubleLinkedQueue()
+        {
+
+        }
+        #endregion
         #region CRUDs
         public bool opPeek(ref T prmItem)
         {

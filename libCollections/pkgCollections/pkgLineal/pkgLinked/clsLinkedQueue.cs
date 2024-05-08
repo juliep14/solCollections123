@@ -6,6 +6,12 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
 {
     public class clsLinkedQueue<T> : clsADTLinked<T>, iQueue<T> where T : IComparable<T>
     {
+        #region Constructor
+        public clsLinkedQueue()
+        {
+
+        }
+        #endregion
         public bool opPeek(ref T prmItem)
         {
             throw new NotImplementedException();

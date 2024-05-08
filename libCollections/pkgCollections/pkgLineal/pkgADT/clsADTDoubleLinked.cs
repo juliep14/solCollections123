@@ -43,7 +43,11 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         {
             return attLastQuarter;
         }
-      
+        public clsDoubleLinkedNode<T> opGetCurrentNode()
+        {
+            return attCurrentNode;
+        }
+
         #endregion
         #region Setters
         public bool opSetFirst(clsDoubleLinkedNode<T> prmNode)
