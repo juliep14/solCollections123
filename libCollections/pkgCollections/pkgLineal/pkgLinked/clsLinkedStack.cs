@@ -11,7 +11,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         {
         }
         #endregion
-
         public bool opPeek(ref T prmItem)
         {
             if (attLength == 0)
@@ -39,9 +38,19 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
                 return true;
             }
         }
-        public bool opPush(T prmItem)
+        public bool opPush(ref T prmItem)
         {
-            throw new NotImplementedException();
+            if (attLength == 0)
+            {
+                prmItem = default;
+                return false;
+            }
+            else
+            {
+                prmItem = opGetLast().opGetItem();
+                opGoLast();
+                return true;
+            }
         }
     }
 }

@@ -14,7 +14,16 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         #endregion
         public bool opPeek(ref T prmItem)
         {
-            throw new NotImplementedException();
+            if (attLength == 0)
+            {
+                prmItem = default;
+                return false;
+            }
+            else
+            {
+                prmItem = opGetFirst().opGetItem();
+                return true;
+            }
         }
         public bool opPop(ref T prmItem)
         {

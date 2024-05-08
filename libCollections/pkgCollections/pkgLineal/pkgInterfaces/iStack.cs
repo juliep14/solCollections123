@@ -6,7 +6,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgInterfaces
     {
         #region Operations
         #region CRUDs
-        bool opPush(T prmItem);
+        bool opPush(ref T prmItem);
         bool opPop(ref T prmItem);
         bool opPeek(ref T prmItem);
         #endregion 
