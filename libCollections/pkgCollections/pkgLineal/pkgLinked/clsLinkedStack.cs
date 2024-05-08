@@ -38,19 +38,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
                 return true;
             }
         }
-        public bool opPush(ref T prmItem)
+
+        public bool opPush(T prmItem)
         {
-            if (attLength == 0)
-            {
-                prmItem = default;
-                return false;
-            }
-            else
-            {
-                prmItem = opGetLast().opGetItem();
-                opGoLast();
-                return true;
-            }
+            throw new NotImplementedException();
         }
     }
 }
