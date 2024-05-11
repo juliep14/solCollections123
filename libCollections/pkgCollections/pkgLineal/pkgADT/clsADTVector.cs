@@ -95,7 +95,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
                 return attGrowingFactor;
             }
         }
-        public static int opGetMaxCapacity()
+        public int opGetMaxCapacity()
         {
             return attMaxCapacity;
         }
