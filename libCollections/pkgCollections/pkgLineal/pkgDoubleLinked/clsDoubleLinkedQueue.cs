@@ -15,7 +15,9 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
         #region CRUDs
         public bool opPeek(ref T prmItem)
         {
-            throw new NotImplementedException();
+            if (attLength == 0) return false;
+            
+            return true;
         }
         public bool opPop(ref T prmItem)
         {

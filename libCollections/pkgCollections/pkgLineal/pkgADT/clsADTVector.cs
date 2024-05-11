@@ -11,6 +11,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
         protected int attTotalCapacity = 100;
         protected bool attItsFlexible = false;
         protected int attGrowingFactor = 100;
+        //protected static int attMaxCapacity = int.MaxValue / 16;
         #endregion
         #region Operations
         #region Builders

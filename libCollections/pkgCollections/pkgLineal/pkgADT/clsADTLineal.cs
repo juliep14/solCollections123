@@ -12,7 +12,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
 
         protected bool attItsOrderedAscending = false;
         protected bool attItsOrderedDescending = false;
-        protected static int attMaxCapacity = int.MaxValue / 16;
+        protected int attMaxCapacity = int.MaxValue / 16;
         protected T[] attItems = new T[100];
         #endregion
         #region Builders
@@ -119,6 +119,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         public int opGetLength()
         {
             return attLength;
+        }
+        public int opGetMaxCapacity()
+        {
+            return attMaxCapacity;
         }
         #endregion
         #region Serialize/Deserialize
