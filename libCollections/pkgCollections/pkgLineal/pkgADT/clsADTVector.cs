@@ -11,7 +11,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
         protected int attTotalCapacity = 100;
         protected bool attItsFlexible = false;
         protected int attGrowingFactor = 100;
-        //protected static int attMaxCapacity = int.MaxValue / 16;
+        protected static int attMaxCapacity = int.MaxValue / 16;
         #endregion
         #region Operations
         #region Builders
@@ -62,10 +62,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
         public int opGetAvailableCapacity()
         {
             return attTotalCapacity - attLength;
-            //int attLength = attItems.Length;
-            //int attItemsCount = 0;
-            //if (attItems[0] != null) attItemsCount++;
-            //return attLength - attItemsCount;
         }
         public int opGetGrowingFactor()
         {
@@ -95,7 +91,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
                 return attGrowingFactor;
             }
         }
-        public int opGetMaxCapacity()
+        public static int opGetMaxCapacity()
         {
             return attMaxCapacity;
         }

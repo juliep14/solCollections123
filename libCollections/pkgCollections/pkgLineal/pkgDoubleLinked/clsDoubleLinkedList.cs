@@ -12,22 +12,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
         }
         public bool opAdd(T prmItem)
         {
-            if (attLength >= attTotalCapacity)
-            {
-                return false;
-            }
-            if (attTotalCapacity == attLength)
-            {
-                attItems[attTotalCapacity - 1] = prmItem;
-                attLength++;
-                return true;
-            }
-            else
-            {
-                attItems[attLength] = prmItem;
-                attLength++;
-                return true;
-            }
+            throw new NotImplementedException();
         }
         public bool opInsert(int Idx, T prmItem)
         {

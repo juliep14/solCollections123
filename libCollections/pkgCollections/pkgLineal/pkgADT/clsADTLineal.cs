@@ -9,7 +9,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
     public class clsADTLineal<T>: clsIterator<T>, iADTLineal<T> where T : IComparable<T>
     {
         #region Attributes
-
+        protected int attTotalCapacity = 100;
         protected bool attItsOrderedAscending = false;
         protected bool attItsOrderedDescending = false;
         protected int attMaxCapacity = int.MaxValue / 16;
@@ -123,6 +123,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         public int opGetMaxCapacity()
         {
             return attMaxCapacity;
+        }
+        public int opGetTotalCapacity()
+        {
+            return attTotalCapacity;
         }
         #endregion
         #region Serialize/Deserialize

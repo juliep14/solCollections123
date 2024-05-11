@@ -1,5 +1,6 @@
 ﻿using pkgServices.pkgCollections.pkgLineal.pkgADT;
 using pkgServices.pkgCollections.pkgLineal.pkgInterfaces;
+using pkgServices.pkgCollections.pkgNodes;
 using System;
 
 namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
@@ -15,7 +16,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         {
             if (attLength == 0)
             {
-                prmItem = default;
                 return false;
             }
             else
@@ -32,16 +32,27 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
                 return false;
             }
             else
-            {
-                prmItem = opGetLast().opGetItem(); 
-                opGoLast(); 
                 return true;
-            }
+            
         }
 
         public bool opPush(T prmItem)
         {
-            throw new NotImplementedException();
+            clsLinkedNode<T> newNode = new clsLinkedNode<T>(prmItem); 
+
+            if (attLength == 0)
+            {
+                opSetFirst(newNode); 
+            }
+            else
+            {
+                clsLinkedNode<T> lastNode = opGetLast(); 
+                lastNode.opSetNext(newNode); 
+            }
+
+            opSetLast(newNode); 
+            attLength++; 
+            return true;
         }
     }
 }
