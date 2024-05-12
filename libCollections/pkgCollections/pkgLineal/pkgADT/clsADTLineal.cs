@@ -136,7 +136,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
             {
                 return null;
             }
-
             T[] result = new T[attLength];
             Array.Copy(attItems, result, attLength);
             return result;
@@ -152,7 +151,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
             attItsOrderedAscending = opItsOrderedAscending();
             attItsOrderedDescending = opItsOrderedDescending();
             return true;
-
         }
         public virtual bool opToItems(T[] prmArray, int prmItemsCount)
         {

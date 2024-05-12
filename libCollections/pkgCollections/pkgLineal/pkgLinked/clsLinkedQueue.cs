@@ -14,14 +14,11 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         #endregion
         public bool opPeek(ref T prmItem)
         {
-            if (attLength == 0)
-            {
-                prmItem = default;
-                return false;
-            }
+            if (attLength == 0 || attFirst == null) return false;
+
             else
             {
-                prmItem = opGetFirst().opGetItem();
+                prmItem = attFirst.opGetItem(); 
                 return true;
             }
         }
