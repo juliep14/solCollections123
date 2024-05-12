@@ -154,13 +154,20 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         }
         public virtual bool opToItems(T[] prmArray)
         {
-            throw new NotImplementedException();
+            if (prmArray == null || prmArray.Length < attLength)
+            {
+                return false;
+            }
+            Array.Copy(attItems, prmArray, attLength);
+            return true;
         }
         public virtual bool opToItems(T[] prmArray, int prmItemsCount)
         {
-            throw new NotImplementedException();
+            if (prmArray == null || prmArray.Length < attLength) return false;       
+            Array.Copy(attItems, prmArray, attLength);
+            return true;
         }
-        //bool opToItems(T[] prmArray, bool prmItsOrderedAscending);
+
         #endregion
         #region CRUDs
         public virtual bool opModify(int prmIdx, T prmItem)
