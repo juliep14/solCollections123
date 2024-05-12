@@ -20,11 +20,28 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgDoubleLinked
                 prmItem = default;
                 return false;
             }
+            prmItem = attLast.opGetItem();
             return true;
         }
         public bool opPop(ref T prmItem)
         {
-            throw new NotImplementedException();
+            if (attLength == 0)
+            {
+                prmItem = default;
+                return false;
+            }
+            prmItem = attLast.opGetItem();
+            attLast = attLast.attPrevious;
+            if (attLast != null)
+            {
+                attLast.attNext = null;
+            }
+            else
+            {
+                attFirst = null; 
+            }
+            attLength--;
+            return true; 
         }
         public bool opPush(T prmItem)
         {

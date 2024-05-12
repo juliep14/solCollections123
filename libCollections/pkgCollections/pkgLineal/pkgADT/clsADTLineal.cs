@@ -1,5 +1,6 @@
 ﻿using pkgServices.pkgCollections.pkgLineal.pkgInterfaces;
 using pkgServices.pkgCollections.pkgLineal.pkgIterators;
+using pkgServices.pkgCollections.pkgNodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,33 +120,22 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         #region Serialize/Deserialize
         public virtual T[] opToArray()
         {
-            if (attItems == null)
-            {
-                return null;
-            }
             if (attLength == 0)
             {
-                T[] prmArray = new T[100];
-                for (int i = 0; i < 100; i++)
-                {
-                    prmArray[i] = attItems[i];
-                }
-                return prmArray;
+                return new T[0]; 
             }
-            if (attLength != attItems.Length)
-            {
-                T[] array = new T[attLength + 1];
-                for (int i = 0; i < attLength + 1; i++)
-                {
-                    array[i] = attItems[i];
-                }
-                return array;
-            }
+
             T[] result = new T[attLength];
-            for (int i = 0; i < attLength; i++)
+            clsDoubleLinkedNode<T> currentNode = attLast;
+            int index = attLength - 1; 
+
+            while (currentNode != null && index >= 0)
             {
-                result[i] = attItems[i];
+                result[index] = currentNode.opGetItem();
+                currentNode = currentNode.attPrevious;
+                index--;
             }
+
             return result;
         }
         public String opToString()
