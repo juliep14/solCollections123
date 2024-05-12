@@ -11,6 +11,30 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         {
 
         }
+        public clsLinkedQueue(int prmCapacity, int attTotalCapacity)
+        {
+            try
+            {
+                if (prmCapacity < 0)
+                {
+                    prmCapacity = 100;
+                    attTotalCapacity = 100;
+                }
+                if (prmCapacity == 0)
+                {
+                    prmCapacity = 100;
+                    attTotalCapacity = 100;
+                }
+                if (attLength < 0) attLength = 0;
+                attItems = new T[prmCapacity];
+            }
+            catch
+            {
+                attTotalCapacity = 100;
+                attMaxCapacity = int.MaxValue / 16;
+                attItems = new T[100];
+            }
+        }
         #endregion
         public bool opPeek(ref T prmItem)
         {
