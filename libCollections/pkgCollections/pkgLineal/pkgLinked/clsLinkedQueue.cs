@@ -14,13 +14,21 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
         #endregion
         public bool opPeek(ref T prmItem)
         {
-            if (attLength == 0 || attFirst == null) return false;
-
-            else
+            if (attItems == null)
             {
-                prmItem = attFirst.opGetItem(); 
-                return true;
+                T[] prmArray = new T[100];
+                attItems = prmArray;
+                return false;
             }
+            //if (attFirst == null) return false;
+            prmItem = attItems[0];
+            return true;
+            /*if (attItems == null || attItems.Length == 0)
+            {
+                return false; 
+            }
+            prmItem = attItems[0];
+            return true;*/
         }
         public bool opPop(ref T prmItem)
         {
