@@ -7,7 +7,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgIterators
     {
         #region Attributes
         protected int attLength = 0;
-        protected int attCurrentIdx=-1;
+        protected int attCurrentIdx = -1;
         protected T attCurrentItem;
         #endregion
         #region Operations
@@ -17,13 +17,13 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgIterators
             throw new NotImplementedException();
         }
         public virtual bool opGoFirstQuarter()
-        {
-            throw new NotImplementedException();
-        }
-        public bool opGoPrevious()//confirmarsiesvirtual
+        { throw new NotImplementedException(); }
+        public bool opGoPrevious()
         {
             if (!opIsTherePrevious())
+            {
                 return false;
+            }
             opGoBack();
             return true;
         }
@@ -31,15 +31,18 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgIterators
         {
             throw new NotImplementedException();
         }
-        public bool opGoLastQuarter()
-        {
-            throw new NotImplementedException();
-        }
+        public virtual bool opGoLastQuarter()
+        { throw new NotImplementedException(); }
         public bool opGoNext()
         {
-            if (!opIsThereNext()) return false;
+            if (!opIsThereNext())
+                return false;
             opGoForward();
             return true;
+        }
+        public bool opGoLast()
+        {
+            throw new NotImplementedException();
         }
         public virtual bool opGo(int prmIdx)
         {
@@ -48,11 +51,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgIterators
             while (attCurrentIdx < prmIdx)
                 opGoNext();
             return true;
-
-        }
-        public bool opGoLast()
-        {
-            throw new NotImplementedException();
         }
         public virtual void opGoBack()
         {
@@ -77,29 +75,33 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgIterators
             throw new NotImplementedException();
         }
         #endregion
-
+        #region Setters
+        public bool opSetCurrentItem(T prmContent)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+        #region Querys
         public bool opIsValid(int prmIdx)
         {
             throw new NotImplementedException();
         }
-
-        public bool SetCurrentItem(T prmContent)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool opIsThereNext()
         {
             if (attCurrentIdx >= attLength - 1) return false;
             return true;
         }
-
         public bool opIsTherePrevious()
         {
             if (attCurrentIdx <= 0) return false;
             return true;
         }
 
+        public bool SetCurrentItem(T prmContent)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
         #endregion
     }
 }

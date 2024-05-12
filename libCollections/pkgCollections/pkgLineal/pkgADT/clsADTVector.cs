@@ -215,7 +215,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
         #region Iterator
         public override bool opGo(int prmIdx)
         {
-            return base.opGo(prmIdx);
+            if (!opIsValid(prmIdx)) return false;
+            attCurrentIdx = prmIdx;
+            attCurrentItem = attItems[attCurrentIdx];
+            return true;
         }
         public override bool opGoFirst()
         {
@@ -231,8 +234,7 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector.pkgADT
         }
         public override void opGoForward()
         {
-            base.opGoForward();
-            attCurrentItem = attItems[attCurrentIdx];
+            throw new NotImplementedException();
         }
         #endregion
         #endregion

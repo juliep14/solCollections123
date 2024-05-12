@@ -5,20 +5,32 @@ namespace pkgServices.pkgCollections.pkgNodes
 {
     public class clsNode<T> : iNode<T> where T : IComparable<T>
     {
+        #region Attributes
         protected T attItem = default;
-        protected clsNode() 
+        #endregion
+        #region Operations
+        #region Builders
+        protected clsNode()
         {
         }
-        public clsNode(T attItem)
+        public clsNode(T prmItem)
         {
+            attItem = prmItem;
         }
-        public T opGetItem() 
+        #endregion
+        #region Getter
+        public T opGetItem()
         {
             return attItem;
         }
-        public bool opSetItem(T prmContent) 
+        #endregion
+        #region Setter
+        public bool opSetItem(T prmContent)
         {
-            return false;
+            if (prmContent != null) attItem = prmContent;
+            return true;
         }
+        #endregion 
+        #endregion
     }
 }

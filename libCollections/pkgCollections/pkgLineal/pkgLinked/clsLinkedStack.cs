@@ -7,24 +7,38 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
 {
     public class clsLinkedStack<T> : clsADTLinked<T>, iStack<T> where T : IComparable<T>
     {
-        #region Constructors
+        #region Builders
         public clsLinkedStack()
         {
+            attLength = 0;
+            attItems = null;
+        }
+        public clsLinkedStack(int prmCapacity)
+        {
+            try
+            {
+                if (prmCapacity < 0)
+                {
+                    prmCapacity = 100;
+                    attTotalCapacity = 100;
+                }
+                if (prmCapacity == 0)
+                {
+                    prmCapacity = 100;
+                    attTotalCapacity = 100;
+                }
+                if (attLength < 0) attLength = 0;
+                attItems = new T[prmCapacity];
+            }
+            catch
+            {
+                attTotalCapacity = 100;
+                attMaxCapacity = int.MaxValue / 16;
+                attItems = new T[100];
+            }
         }
         #endregion
         public bool opPeek(ref T prmItem)
-        {
-            if (attLength == 0)
-            {
-                return false;
-            }
-            else
-            {
-                prmItem = opGetLast().opGetItem();
-                return true;
-            }
-        }
-        public bool opPop(ref T prmItem)
         {
             if (attLength == 0)
             {
@@ -32,26 +46,54 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgLinked
                 return false;
             }
             else
+            {
+                prmItem = attItems[0];
+                attMiddle.opSetItem(attItems[attLength / 2]);
+                attLastQuarter.opSetItem(attItems[attLength - 1]);
                 return true;
-            
+            }
         }
-
+        public bool opPop(ref T prmItem)
+        {
+            if (attItems == null) return false;
+            prmItem = attItems[0];
+            attLength--;
+            T[] prmArray = new T[attLength];
+            for (int i = 0; i < attLength; i++)
+            {
+                prmArray[i] = attItems[i + 1];
+            }
+            attItems = prmArray;
+            attLastQuarter.opSetItem(attMiddle.opGetItem());
+            return true;
+        }
         public bool opPush(T prmItem)
         {
-            clsLinkedNode<T> newNode = new clsLinkedNode<T>(prmItem); 
-
-            if (attLength == 0)
+            clsLinkedNode<T> newNode = new clsLinkedNode<T>(prmItem);
+            if (attFirst == null)
             {
-                opSetFirst(newNode); 
+                attLength++;
+                T[] array = new T[attLength];
+                array[0] = newNode.opGetItem();
+                attItems = array;
+                attFirst = newNode;
+                attFirstQuarter = newNode;
+                attMiddle = newNode;
+                attLastQuarter = newNode;
+                attLast = newNode;
+                return true;
             }
-            else
+            attLength++;
+            T[] prmArray = new T[attLength];
+            prmArray[0] = newNode.opGetItem();
+            for (int i = 0; i < attLength - 1; i++)
             {
-                clsLinkedNode<T> lastNode = opGetLast(); 
-                lastNode.opSetNext(newNode); 
+                prmArray[i + 1] = attItems[i];
             }
-
-            opSetLast(newNode); 
-            attLength++; 
+            attItems = prmArray;
+            attMiddle.opSetItem(attItems[attLength / 2]);
+            attLastQuarter.opSetItem(attItems[(attLength / 2) + (attLength / 4)]);
+            attFirst = newNode;
             return true;
         }
     }
