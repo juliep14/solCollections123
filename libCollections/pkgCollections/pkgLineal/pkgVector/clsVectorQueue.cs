@@ -7,7 +7,6 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgVector
     public class clsVectorQueue<T> : clsADTVector<T>, iQueue<T> where T : IComparable<T>
     {
         #region Attributes
-        //protected T[] attItems = new T[100];
         #endregion
         #region Operations
         #region Builders

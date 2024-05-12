@@ -9,10 +9,10 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
     public class clsADTLineal<T>: clsIterator<T>, iADTLineal<T> where T : IComparable<T>
     {
         #region Attributes
-        protected int attTotalCapacity = 100;
+        //protected int attTotalCapacity = 100;
         protected bool attItsOrderedAscending = false;
         protected bool attItsOrderedDescending = false;
-        protected int attMaxCapacity = int.MaxValue / 16;
+        protected static int attMaxCapacity = int.MaxValue / 16;
         protected T[] attItems = new T[100];
         #endregion
         #region Builders
@@ -120,14 +120,14 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         {
             return attLength;
         }
-        public int opGetMaxCapacity()
+        public static int opGetMaxCapacity()
         {
             return attMaxCapacity;
         }
-        public int opGetTotalCapacity()
+        /*public int opGetTotalCapacity()
         {
             return attTotalCapacity;
-        }
+        }*/
         #endregion
         #region Serialize/Deserialize
         public virtual T[] opToArray()
