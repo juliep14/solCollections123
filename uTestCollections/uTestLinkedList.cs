@@ -52,7 +52,7 @@ namespace uTestCollections
             Assert.AreEqual(456, testMyList.opGetLast().opGetItem());
             #endregion
         }
-        /*[TestMethod]
+        [TestMethod]
         public void testAddNextItemWithHugeCollection()
         {
             #region Setup
@@ -73,7 +73,7 @@ namespace uTestCollections
             Assert.AreEqual(0, testMyList.opGetLastQuarter().opGetItem());
             Assert.AreEqual(777, testMyList.opGetLast().opGetItem());
             #endregion
-        }*/
+        }
         #endregion
         #region Remove Tests
         [TestMethod]

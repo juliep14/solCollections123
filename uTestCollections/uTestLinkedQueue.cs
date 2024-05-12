@@ -73,7 +73,7 @@ namespace uTestCollections
             Assert.AreEqual(456, testMyQueue.opGetLast().opGetItem());
             #endregion
         }
-        /*[TestMethod]
+        [TestMethod]
         public void testPushNextItemWithHugeCollection()
         {
             #region Setup
@@ -94,7 +94,7 @@ namespace uTestCollections
             Assert.AreEqual(0, testMyQueue.opGetLastQuarter().opGetItem());
             Assert.AreEqual(777, testMyQueue.opGetLast().opGetItem());
             #endregion
-        }*/
+        }
         #endregion
         #region Pop Tests
         [TestMethod]

@@ -68,7 +68,7 @@ namespace uTestCollections
             Assert.AreEqual(3, testMyStack.opGetLast().opGetItem());
             #endregion
         }
-        /*[TestMethod]
+        [TestMethod]
         public void testPushNextItemWithHugeCollection()
         {
             #region Setup
@@ -84,7 +84,7 @@ namespace uTestCollections
             Assert.IsFalse(testMyStack.opItsOrderedDescending());
             CollectionAssert.AreEqual(testExpectedItems, testMyStack.opToArray());
             #endregion
-        }*/
+        }
         #endregion
         #region Pop Tests
         [TestMethod]
