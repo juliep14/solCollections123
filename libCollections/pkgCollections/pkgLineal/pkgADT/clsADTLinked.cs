@@ -25,6 +25,22 @@ namespace pkgServices.pkgCollections.pkgLineal.pkgADT
         }
         public clsLinkedNode<T> opGetLast()
         {
+            if (attItems == null)
+            {
+                attLast = null;
+                return attLast;
+            }
+            if (attLength == 0)
+            {
+                attLast = null;
+                return attLast;
+            }
+            if (attLength != attItems.Length)
+            {
+                attLast.opSetItem(attItems[attLength]);
+                return attLast;
+            }
+            attLast.opSetItem(attItems[attLength - 1]);
             return attLast;
         }
         public clsLinkedNode<T> opGetMiddle()
